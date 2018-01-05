@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Users/nico1/Desktop/Dvlpt/API/Spigot/1.8/1.8_R3/nms/spigot.jar"/>
+	<classpathentry kind="lib" path="C:/Users/nico1/Desktop/Dvlpt/API/API/GlowstoneAPI.jar"/>
+	<classpathentry kind="lib" path="C:/Users/nico1/Desktop/Dvlpt/API/API/NametagEdit.jar"/>
+	<classpathentry kind="lib" path="C:/Users/nico1/Desktop/Dvlpt/API/API/PermissionsEx.jar"/>
+	<classpathentry kind="lib" path="C:/Users/nico1/Desktop/Dvlpt/API/Spigot/1.8/1.8_R3/api/spigot-api-1.8.8-R0.1-SNAPSHOT-latest-shaded.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
