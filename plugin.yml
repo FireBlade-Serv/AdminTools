@@ -1,0 +1,7 @@
+name: AdminTools
+main: be.goldocelot.admintools.Main
+author: [Glowstoner, _goldocelot_]
+version: Alpha v1
+commands:
+ at:
+  description: Utilise /at help pour voir la liste des commandes !

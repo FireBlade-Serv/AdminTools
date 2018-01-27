@@ -334,9 +334,8 @@ public class Events implements Listener {
 							ChatColor.BLUE+"\" .");
 				} else {
 					p.closeInventory();
-				// Ouvrir le menu de Ban
+					p.openInventory(createBanMenu(target));
 					
-				// Kick le target.
 				}
 			} else if (item.equals(generateItem(Material.ENDER_CHEST, ChatColor.GRAY+"Inventaire de l'ender chest"))) {
 				if (target == null) {
@@ -386,6 +385,63 @@ public class Events implements Listener {
 		} else if (i.getName().equals(ChatColor.GRAY+"EnderChest")) {
 			e.setCancelled(true);
 		} else if (i.getName().equals(ChatColor.GOLD+"Inventaire")) {
+			e.setCancelled(true);
+		} else if (i.getName().equals(ChatColor.RED+"Menu de ban")) {
+			String targetName = playerMenu.get(p);
+			Player target = Bukkit.getPlayer(targetName);
+			if (item.equals(adminToolsLogo("_goldocelot_ and Glowstoner"))) {
+				p.sendMessage(ChatColor.GOLD+""+ChatColor.BOLD+"Merci d'utiliser le plugin \"AdminTools\" développé par Goldocelot et Glowstoner.");
+			} else if (item.equals(generateItem(Material.PAPER, ChatColor.AQUA+"Retour"))) {
+				p.closeInventory();
+				Inventory inv = Bukkit.createInventory(null, 54, ChatColor.GREEN+"PlayerMenu");
+				Events.createPlayerMenu(target, inv);
+				p.openInventory(inv);
+			} else if (item.equals(generateItem(Material.REDSTONE_ORE, ChatColor.RED+"Xray"))) {
+				p.closeInventory();
+				//Ban pour Xray
+			} else if (item.equals(generateItem(Material.ANVIL, ChatColor.DARK_GRAY+"Anti-kb"))) {
+				p.closeInventory();
+				//Ban pour Anti-kb
+			} else if (item.equals(generateEgg((short) 93, ChatColor.WHITE+"Glide"))) {
+				p.closeInventory();
+				//Ban pour Glide
+			} else if (item.equals(generateEgg((short) 52, ChatColor.DARK_RED+"Spider"))) {
+				p.closeInventory();
+				//Ban pour Spider
+			} else if (item.equals(generateItem(Material.GLASS, ChatColor.WHITE+"HitBox"))) {
+				p.closeInventory();
+				//Ban pour HitBox
+			} else if (item.equals(generateItem(Material.ARROW, ChatColor.YELLOW+"AimBot/AimAssist"))) {
+				p.closeInventory();
+				//Ban pour AimBot/AimAssist
+			} else if (item.equals(generateItem(Material.BREAD, ChatColor.GOLD+"FastEat"))) {
+				p.closeInventory();
+				//Ban pour FastEat
+			} else if (item.equals(generateItem(Material.SLIME_BALL, ChatColor.GREEN+"Autre"))) {
+				p.closeInventory();
+				//Ban pour Autre
+			} else if (item.equals(generateItem(Material.FEATHER, ChatColor.WHITE+"Fly"))) {
+				p.closeInventory();
+				//Ban pour Fly
+			} else if (item.equals(generateItem(Material.DIAMOND_PICKAXE, ChatColor.DARK_BLUE+"FastMining"))) {
+				p.closeInventory();
+				//Ban pour FastMining
+			} else if (item.equals(generateItem(Material.WOOD, ChatColor.GREEN+"FastPlace"))) {
+				p.closeInventory();
+				//Ban pour FastPlace
+			} else if (item.equals(generateItem(Material.DIAMOND_BOOTS, ChatColor.LIGHT_PURPLE+"NoFall"))) {
+				p.closeInventory();
+				//Ban pour NoFall
+			} else if (item.equals(generateItem(Material.LEATHER_BOOTS, ChatColor.AQUA+"Strafe"))) {
+				p.closeInventory();
+				//Ban pour Strafe
+			} else if (item.equals(generateItem(Material.WATER_BUCKET, ChatColor.BLUE+"Jesus"))) {
+				p.closeInventory();
+				//Ban pour Jesus
+			} else if (item.equals(generateItem(Material.DIAMOND_SWORD, ChatColor.AQUA+"ForceField"))) {
+				p.closeInventory();
+				//Ban pour ForceField
+			}
 			e.setCancelled(true);
 		}
 	}
@@ -438,6 +494,15 @@ public class Events implements Listener {
 		return potion;
 	}
 
+	public static ItemStack generateEgg(short dataid, String name) {
+		ItemStack item = new ItemStack(Material.MONSTER_EGG, 1);
+		ItemMeta meta = item.getItemMeta();
+		meta.setDisplayName(name);
+		item.setDurability(dataid);
+		item.setItemMeta(meta);
+		return item;
+	}
+	
 	public static ItemStack adminToolsLogo(String crea) {
 		ArrayList<String> lore = new ArrayList<String>();
 		lore.add("§8");
@@ -561,6 +626,30 @@ public class Events implements Listener {
 		inv.setItem(48, generateItem(Material.COOKED_BEEF, ChatColor.GREEN+"Feed"));
 		inv.setItem(50, generateItem(Material.IRON_CHESTPLATE, ChatColor.GRAY+"Demander une vérif"));	
 		inv.setItem(52, generateItem(Material.GRASS, ChatColor.GREEN+"Monde: "+p.getWorld().getName()));
+		return inv;
+	}	
+	
+	public static  Inventory createBanMenu(Player p) {
+		Inventory inv = Bukkit.createInventory(null, 54, ChatColor.RED+"Menu de ban");
+		
+		inv.setItem(0, generateSkull(p.getName()));
+		inv.setItem(4, adminToolsLogo("_goldocelot_ and Glowstoner"));
+		inv.setItem(8, generateItem(Material.PAPER, ChatColor.AQUA+"Retour"));
+		inv.setItem(11, generateItem(Material.REDSTONE_ORE, ChatColor.RED+"Xray"));
+		inv.setItem(15, generateItem(Material.ANVIL, ChatColor.DARK_GRAY+"Anti-kb"));
+		inv.setItem(19, generateEgg((short) 93, ChatColor.WHITE+"Glide"));
+		inv.setItem(47, generateItem(Material.WATER_BUCKET, ChatColor.BLUE+"Jesus"));
+		inv.setItem(21, generateEgg((short) 52, ChatColor.DARK_RED+"Spider"));
+		inv.setItem(23, generateItem(Material.GLASS, ChatColor.WHITE+"HitBox"));
+		inv.setItem(51, generateItem(Material.DIAMOND_SWORD, ChatColor.AQUA+"ForceField"));
+		inv.setItem(25, generateItem(Material.ARROW, ChatColor.YELLOW+"AimBot/AimAssist"));
+		inv.setItem(27, generateItem(Material.BREAD, ChatColor.GOLD+"FastEat"));
+		inv.setItem(37, generateItem(Material.DIAMOND_PICKAXE, ChatColor.DARK_BLUE+"FastMining"));
+		inv.setItem(39, generateItem(Material.WOOD, ChatColor.GREEN+"FastPlace"));
+		inv.setItem(41, generateItem(Material.DIAMOND_BOOTS, ChatColor.LIGHT_PURPLE+"NoFall"));
+		inv.setItem(35, generateItem(Material.FEATHER, ChatColor.WHITE+"Fly"));
+		inv.setItem(43, generateItem(Material.LEATHER_BOOTS, ChatColor.AQUA+"Strafe"));
+		inv.setItem(31, generateItem(Material.SLIME_BALL, ChatColor.GREEN+"Autre"));
 		return inv;
 	}	
 }
