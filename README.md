@@ -1,2 +1,2 @@
 # AdminTools
-L'outil de modération du FireBlade-Serv ! http://www.fireblade-serv.eu/
+L'outil de modération de FireBlade-Serv ! http://www.fireblade-serv.eu/
