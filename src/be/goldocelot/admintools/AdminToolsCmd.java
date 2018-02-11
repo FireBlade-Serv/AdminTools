@@ -34,9 +34,9 @@ public class AdminToolsCmd implements CommandExecutor {
 					p.sendMessage(ChatColor.GOLD+""+ChatColor.BOLD+"Liste des commandes du Plugin "+ChatColor.WHITE+"[AdminTools] ");
 					p.sendMessage(ChatColor.WHITE+"/at as :"+ChatColor.GREEN+" Enlever/Obtenir l'AdminStick dans son inventaire.");
 					p.sendMessage(ChatColor.WHITE+"/at s [Joueur] :"+ChatColor.GREEN+" Passer en gamemode survie le joueur.");
-					p.sendMessage(ChatColor.WHITE+"/at c [Joueur] :"+ChatColor.GREEN+" Passer en gamemode créatif le joueur.");
+					p.sendMessage(ChatColor.WHITE+"/at c [Joueur] :"+ChatColor.GREEN+" Passer en gamemode crÃ©atif le joueur.");
 					p.sendMessage(ChatColor.WHITE+"/at a [Joueur]:"+ChatColor.GREEN+" Passer en gamemode aventure le joueur.");
-					p.sendMessage(ChatColor.WHITE+"/at sp [Joueur] :"+ChatColor.GREEN+" Passer en gamemode spéctateur le joueur.");
+					p.sendMessage(ChatColor.WHITE+"/at sp [Joueur] :"+ChatColor.GREEN+" Passer en gamemode spÃ©ctateur le joueur.");
 					p.sendMessage(ChatColor.WHITE+"/at heal [Joueur] :"+ChatColor.GREEN+" Heal le joueur.");
 					p.sendMessage(ChatColor.WHITE+"/at feed [Joueur] :"+ChatColor.GREEN+" Feed le joueur.");
 					p.sendMessage(ChatColor.WHITE+"/at r [Joueur] :"+ChatColor.GREEN+" Ouvre le menu du joueur.");
@@ -44,13 +44,13 @@ public class AdminToolsCmd implements CommandExecutor {
 					p.sendMessage(ChatColor.WHITE+"/at clear [Joueur] :"+ChatColor.GREEN+" Clear le joueur.");
 					p.sendMessage(ChatColor.WHITE+"/at ec [Joueur] :"+ChatColor.GREEN+" Ouvre l'enderchest du joueur.");
 					p.sendMessage(ChatColor.WHITE+"/at inv [Joueur] :"+ChatColor.GREEN+" Ouvre l'inventaire du joueur.");
-					p.sendMessage(ChatColor.WHITE+"/at tp [Joueur] :"+ChatColor.GREEN+" Vous téléporte au joueur.");
+					p.sendMessage(ChatColor.WHITE+"/at tp [Joueur] :"+ChatColor.GREEN+" Vous tÃ©lÃ©porte au joueur.");
 					p.sendMessage(ChatColor.WHITE+"/at freeze [Joueur] (Joueur obligatoire) :"+ChatColor.GREEN+" Freeze le joueur.");
-					p.sendMessage(ChatColor.WHITE+"/at vanish :"+ChatColor.GREEN+" Activer/désactiver le vanish.");
-					p.sendMessage(ChatColor.WHITE+"/at flyspeed :"+ChatColor.GREEN+" Activer/désactiver le fly speed.");
+					p.sendMessage(ChatColor.WHITE+"/at vanish :"+ChatColor.GREEN+" Activer/dÃ©sactiver le vanish.");
+					p.sendMessage(ChatColor.WHITE+"/at flyspeed :"+ChatColor.GREEN+" Activer/dÃ©sactiver le fly speed.");
 					p.sendMessage(ChatColor.WHITE+"/at as gui :"+ChatColor.GREEN+" Ouvre le menu de l'AdminStick");
-					p.sendMessage(ChatColor.WHITE+"Utiliser les commandes contenant \"[Joueur]\" sans définir celui-ci vous vise par défaut.");
-					p.sendMessage(ChatColor.GOLD+""+ChatColor.BOLD+"Développé par _goldocelot_.");
+					p.sendMessage(ChatColor.WHITE+"Utiliser les commandes contenant \"[Joueur]\" sans dÃ©finir celui-ci vous vise par dÃ©faut.");
+					p.sendMessage(ChatColor.GOLD+""+ChatColor.BOLD+"DÃ©veloppÃ© par _goldocelot_.");
 				} else if (args.length == 1 && args[0].equalsIgnoreCase("as")) {
 					ItemStack adminStick = new ItemStack(Material.STICK);
 					ItemMeta adminStickMeta = adminStick.getItemMeta();
@@ -67,7 +67,7 @@ public class AdminToolsCmd implements CommandExecutor {
 				} else if (args.length == 2 && args[0].equals("as") && args[1].equals("gui")) {
 						Inventory i1 = Bukkit.createInventory(null, 27, ChatColor.GOLD+"AdminTools");
 						i1.setItem(1, Events.generateItem(Material.STONE_AXE, ChatColor.DARK_RED+"Gamemode Survie"));
-						i1.setItem(3, Events.generateItem(Material.GRASS, ChatColor.DARK_GREEN+"Gamemode Créatif"));
+						i1.setItem(3, Events.generateItem(Material.GRASS, ChatColor.DARK_GREEN+"Gamemode CrÃ©atif"));
 						i1.setItem(5, Events.generateItem(Material.IRON_SWORD, ChatColor.GOLD+"Gamemode Aventure"));
 						i1.setItem(7, Events.generateItem(Material.GLASS, ChatColor.GRAY+"Gamemode Spectateur"));
 						i1.setItem(9, Events.adminToolsLogo("_goldocelot"));
@@ -79,13 +79,13 @@ public class AdminToolsCmd implements CommandExecutor {
 				} else if (args[0].equalsIgnoreCase("s")) {
 					 if (args.length == 1) {
 						p.setGameMode(GameMode.SURVIVAL);
-						p.sendMessage(ChatColor.BLUE+"Gamemode réglé sur survie.");
+						p.sendMessage(ChatColor.BLUE+"Gamemode rÃ©glÃ© sur survie.");
 					} else if (args.length == 2) {
 						Player target = Bukkit.getPlayer(args[1]);
 						
 						if(target != null) {
 							target.setGameMode(GameMode.SURVIVAL);
-							p.sendMessage(ChatColor.BLUE+"Gamemode de "+ChatColor.WHITE+target.getName()+ChatColor.BLUE+" réglé sur survie.");
+							p.sendMessage(ChatColor.BLUE+"Gamemode de "+ChatColor.WHITE+target.getName()+ChatColor.BLUE+" rÃ©glÃ© sur survie.");
 						}else {
 							p.sendMessage(ChatColor.BLUE+"Impossible de localiser le joueur: \""+ChatColor.WHITE+args[1]+ChatColor.BLUE+"\" .");
 						}
@@ -93,13 +93,13 @@ public class AdminToolsCmd implements CommandExecutor {
 				} else if (args[0].equalsIgnoreCase("c")) {
 					if (args.length == 1) {
 						p.setGameMode(GameMode.CREATIVE);
-						p.sendMessage(ChatColor.BLUE+"Gamemode réglé sur créatif.");
+						p.sendMessage(ChatColor.BLUE+"Gamemode rÃ©glÃ© sur crÃ©atif.");
 					} else if (args.length == 2) {
 						Player target = Bukkit.getPlayer(args[1]);
 						
 						if(target != null) {
 							target.setGameMode(GameMode.CREATIVE);
-							p.sendMessage(ChatColor.BLUE+"Gamemode de "+ChatColor.WHITE+target.getName()+ChatColor.BLUE+" réglé sur créatif.");
+							p.sendMessage(ChatColor.BLUE+"Gamemode de "+ChatColor.WHITE+target.getName()+ChatColor.BLUE+" rÃ©glÃ© sur crÃ©atif.");
 						}else {
 							p.sendMessage(ChatColor.BLUE+"Impossible de localiser le joueur: \""+ChatColor.WHITE+args[1]+ChatColor.BLUE+"\" .");
 						}
@@ -107,13 +107,13 @@ public class AdminToolsCmd implements CommandExecutor {
 				} else if (args[0].equalsIgnoreCase("a")) {
 					if (args.length == 1) {
 						p.setGameMode(GameMode.ADVENTURE);
-						p.sendMessage(ChatColor.BLUE+"Gamemode réglé sur aventure.");
+						p.sendMessage(ChatColor.BLUE+"Gamemode rÃ©glÃ© sur aventure.");
 					} else if (args.length == 2) {
 						Player target = Bukkit.getPlayer(args[1]);
 						
 						if(target != null) {
 							target.setGameMode(GameMode.ADVENTURE);
-							p.sendMessage(ChatColor.BLUE+"Gamemode de "+ChatColor.WHITE+target.getName()+ChatColor.BLUE+" réglé sur aventure.");
+							p.sendMessage(ChatColor.BLUE+"Gamemode de "+ChatColor.WHITE+target.getName()+ChatColor.BLUE+" rÃ©glÃ© sur aventure.");
 						}else {
 							p.sendMessage(ChatColor.BLUE+"Impossible de localiser le joueur: \""+ChatColor.WHITE+args[1]+ChatColor.BLUE+"\" .");
 						}
@@ -121,13 +121,13 @@ public class AdminToolsCmd implements CommandExecutor {
 				} else if (args[0].equalsIgnoreCase("sp")) {
 					if (args.length == 1) {
 						p.setGameMode(GameMode.SPECTATOR);
-						p.sendMessage(ChatColor.BLUE+"Gamemode réglé sur spéctateur.");
+						p.sendMessage(ChatColor.BLUE+"Gamemode rÃ©glÃ© sur spÃ©ctateur.");
 					} else if (args.length == 2) {
 						Player target = Bukkit.getPlayer(args[1]);
 						
 						if(target != null) {
 							target.setGameMode(GameMode.SPECTATOR);
-							p.sendMessage(ChatColor.BLUE+"Gamemode de "+ChatColor.WHITE+target.getName()+ChatColor.BLUE+" réglé sur spéctateur.");
+							p.sendMessage(ChatColor.BLUE+"Gamemode de "+ChatColor.WHITE+target.getName()+ChatColor.BLUE+" rÃ©glÃ© sur spÃ©ctateur.");
 						}else {
 							p.sendMessage(ChatColor.BLUE+"Impossible de localiser le joueur: \""+ChatColor.WHITE+args[1]+ChatColor.BLUE+"\" .");
 						}
@@ -135,13 +135,13 @@ public class AdminToolsCmd implements CommandExecutor {
 				} else if (args[0].equalsIgnoreCase("heal")) {
 					if(args.length == 1) {
 						p.setHealth(p.getMaxHealth());
-						p.sendMessage(ChatColor.BLUE+"Vie réstaurée.");
+						p.sendMessage(ChatColor.BLUE+"Vie rÃ©staurÃ©e.");
 					} else if (args.length == 2) {
 						Player target = Bukkit.getPlayer(args[1]);
 						
 						if(target != null) {
 							target.setHealth(p.getMaxHealth());
-							p.sendMessage(ChatColor.BLUE+"Vie de "+ChatColor.WHITE+target.getName()+ChatColor.BLUE+" réstaurée.");
+							p.sendMessage(ChatColor.BLUE+"Vie de "+ChatColor.WHITE+target.getName()+ChatColor.BLUE+" rÃ©staurÃ©e.");
 						}else {
 							p.sendMessage(ChatColor.BLUE+"Impossible de localiser le joueur: \""+ChatColor.WHITE+args[1]+ChatColor.BLUE+"\" .");
 						}
@@ -149,13 +149,13 @@ public class AdminToolsCmd implements CommandExecutor {
 				} else if (args[0].equalsIgnoreCase("feed")) {
 					if(args.length == 1) {
 						p.setFoodLevel(20);
-						p.sendMessage(ChatColor.BLUE+"Nourriture réstaurée.");
+						p.sendMessage(ChatColor.BLUE+"Nourriture rÃ©staurÃ©e.");
 					} else if (args.length == 2) {
 						Player target = Bukkit.getPlayer(args[1]);
 						
 						if(target != null) {
 							target.setFoodLevel(20);
-							p.sendMessage(ChatColor.BLUE+"Nourriture de "+ChatColor.WHITE+target.getName()+ChatColor.BLUE+" réstaurée.");
+							p.sendMessage(ChatColor.BLUE+"Nourriture de "+ChatColor.WHITE+target.getName()+ChatColor.BLUE+" rÃ©staurÃ©e.");
 						}else {
 							p.sendMessage(ChatColor.BLUE+"Impossible de localiser le joueur: \""+ChatColor.WHITE+args[1]+ChatColor.BLUE+"\" .");
 						}
@@ -166,7 +166,7 @@ public class AdminToolsCmd implements CommandExecutor {
 							online.showPlayer(p);
 						}
 						
-						p.sendMessage(ChatColor.BLUE+"Vous n'êtes plus vanish.");
+						p.sendMessage(ChatColor.BLUE+"Vous n'Ãªtes plus vanish.");
 						
 						Events.pVanish.remove(p);
 					} else if (!Events.pVanish.contains(p)) {
@@ -174,17 +174,17 @@ public class AdminToolsCmd implements CommandExecutor {
 							online.hidePlayer(p);
 						}
 						
-						p.sendMessage(ChatColor.BLUE+"Vous êtes vanish.");
+						p.sendMessage(ChatColor.BLUE+"Vous Ãªtes vanish.");
 						
 						Events.pVanish.add(p);
 					}
 				} else if (args[0].equalsIgnoreCase("FlySpeed") && args.length == 1) {
 					if(p.getFlySpeed() == 0.3f) {
 						p.setFlySpeed(0.1f);
-						p.sendMessage(ChatColor.BLUE+"Speed désactivé.");
+						p.sendMessage(ChatColor.BLUE+"Speed dÃ©sactivÃ©.");
 					} else if (p.getFlySpeed() == 0.1f) {
 						p.setFlySpeed(0.3f);
-						p.sendMessage(ChatColor.BLUE+"Speed activé.");
+						p.sendMessage(ChatColor.BLUE+"Speed activÃ©.");
 					}
 				} else if (args[0].equalsIgnoreCase("r")) {
 					if (args.length == 1) {
@@ -200,13 +200,13 @@ public class AdminToolsCmd implements CommandExecutor {
 				} else if (args[0].equalsIgnoreCase("tp")) {
 					if (args.length == 1) {
 						p.teleport(p);
-						p.sendMessage(ChatColor.BLUE+"Vous avez été téléporté sur vous-même");
+						p.sendMessage(ChatColor.BLUE+"Vous avez Ã©tÃ© tÃ©lÃ©portÃ© sur vous-mÃªme");
 					} else if (args.length == 2) {
 						Player target = Bukkit.getPlayer(args[1]);
 						
 						if(target != null) {
 							p.teleport(target);
-							p.sendMessage(ChatColor.BLUE+"Vous avez été téléporté à \""+ChatColor.WHITE+target.getName()+ChatColor.BLUE+"\" .");
+							p.sendMessage(ChatColor.BLUE+"Vous avez Ã©tÃ© tÃ©lÃ©portÃ© Ã  \""+ChatColor.WHITE+target.getName()+ChatColor.BLUE+"\" .");
 						}else {
 							p.sendMessage(ChatColor.BLUE+"Impossible de localiser le joueur: \""+ChatColor.WHITE+args[1]+ChatColor.BLUE+"\" .");
 						}
@@ -216,9 +216,9 @@ public class AdminToolsCmd implements CommandExecutor {
 					
 					if(target != null) {						
 						if(Events.freezes.contains(target)) {
-							p.sendMessage("§9Le joueur \"§f"+target.getName()+"§9 \" n'est plus freeze.");
+							p.sendMessage("Â§9Le joueur \"Â§f"+target.getName()+"Â§9 \" n'est plus freeze.");
 							
-							GlowstoneTitle gt = new GlowstoneTitle(target, "", "§cVous n'êtes plus freeze !", 20, 50, 20);
+							GlowstoneTitle gt = new GlowstoneTitle(target, "", "Â§cVous n'Ãªtes plus freeze !", 20, 50, 20);
 							gt.send();
 							
 							target.setWalkSpeed(0.2f);
@@ -226,9 +226,9 @@ public class AdminToolsCmd implements CommandExecutor {
 							Events.freezes.remove(target);
 							p.closeInventory();
 						} else {
-							p.sendMessage("§9Le joueur \"§f"+target.getName()+"§9 \" est freeze.");
+							p.sendMessage("Â§9Le joueur \"Â§f"+target.getName()+"Â§9 \" est freeze.");
 							
-							GlowstoneTitle gt = new GlowstoneTitle(target, "", "§9Vous êtes freeze !", 20, 50, 20);
+							GlowstoneTitle gt = new GlowstoneTitle(target, "", "Â§9Vous Ãªtes freeze !", 20, 50, 20);
 							gt.send();
 							
 							target.setWalkSpeed(0.0f);
@@ -241,13 +241,13 @@ public class AdminToolsCmd implements CommandExecutor {
 				} else if (args[0].equalsIgnoreCase("kill")) {
 					if(args.length == 1) {
 						p.damage(p.getMaxHealth());
-						p.sendMessage(ChatColor.BLUE+"Vous vous êtes tué.");
+						p.sendMessage(ChatColor.BLUE+"Vous vous Ãªtes tuÃ©.");
 					} else if (args.length == 2) {
 						Player target = Bukkit.getPlayer(args[1]);
 						
 						if(target != null) {
 							target.damage(target.getMaxHealth());
-							p.sendMessage(ChatColor.BLUE+"Vous avez tué \""+ChatColor.WHITE+target.getName()+ChatColor.BLUE+"\" .");
+							p.sendMessage(ChatColor.BLUE+"Vous avez tuÃ© \""+ChatColor.WHITE+target.getName()+ChatColor.BLUE+"\" .");
 						}else {
 							p.sendMessage(ChatColor.BLUE+"Impossible de localiser le joueur: \""+ChatColor.WHITE+args[1]+ChatColor.BLUE+"\" .");
 						}
@@ -259,7 +259,7 @@ public class AdminToolsCmd implements CommandExecutor {
 						p.getInventory().setChestplate(null);
 						p.getInventory().setLeggings(null);
 						p.getInventory().setBoots(null);
-						p.sendMessage(ChatColor.BLUE+"Vous vous êtes clear.");
+						p.sendMessage(ChatColor.BLUE+"Vous vous Ãªtes clear.");
 					} else if (args.length == 2) {
 						Player target = Bukkit.getPlayer(args[1]);
 						
@@ -276,14 +276,14 @@ public class AdminToolsCmd implements CommandExecutor {
 					}
 				} else if (args[0].equalsIgnoreCase("ec")) {
 					if(args.length == 1) {
-						p.sendMessage("§9Vous avez ouvert votre enderchest.");
+						p.sendMessage("Â§9Vous avez ouvert votre enderchest.");
 						
 						p.openInventory(Events.createEnderChest(p));
 					} else if (args.length == 2) {
 						Player target = Bukkit.getPlayer(args[1]);
 						
 						if(target != null) {
-							p.sendMessage("§9Ender Chest de \"§f"+target.getName()+"§9 \" ouvert.");
+							p.sendMessage("Â§9Ender Chest de \"Â§f"+target.getName()+"Â§9 \" ouvert.");
 							
 							p.openInventory(Events.createEnderChest(target));
 						}else {
@@ -292,14 +292,14 @@ public class AdminToolsCmd implements CommandExecutor {
 					}
 				} else if (args[0].equalsIgnoreCase("inv")) {
 					if(args.length == 1) {
-						p.sendMessage("§9Vous avez ouvert votre inventaire.");
+						p.sendMessage("Â§9Vous avez ouvert votre inventaire.");
 						
 						p.openInventory(Events.createPlayerInventory(p));
 					} else if (args.length == 2) {
 						Player target = Bukkit.getPlayer(args[1]);
 						
 						if(target != null) {
-							p.sendMessage("§9Iventaire de \"§f"+target.getName()+"§9 \" ouvert.");
+							p.sendMessage("Â§9Iventaire de \"Â§f"+target.getName()+"Â§9 \" ouvert.");
 							
 							p.openInventory(Events.createPlayerInventory(target));
 						}else {

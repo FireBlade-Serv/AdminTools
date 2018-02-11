@@ -94,7 +94,7 @@ public class Events implements Listener {
 				if (p.getInventory().getItemInHand().equals(adminStick)) {
 					Inventory i1 = Bukkit.createInventory(null, 27, ChatColor.GOLD+"AdminTools");
 					i1.setItem(1, generateItem(Material.STONE_AXE, ChatColor.DARK_RED+"Gamemode Survie"));
-					i1.setItem(3, generateItem(Material.GRASS, ChatColor.DARK_GREEN+"Gamemode Créatif"));
+					i1.setItem(3, generateItem(Material.GRASS, ChatColor.DARK_GREEN+"Gamemode CrÃ©atif"));
 					i1.setItem(5, generateItem(Material.IRON_SWORD, ChatColor.GOLD+"Gamemode Aventure"));
 					i1.setItem(7, generateItem(Material.GLASS, ChatColor.GRAY+"Gamemode Spectateur"));
 					i1.setItem(9, adminToolsLogo("_goldocelot_"));
@@ -118,22 +118,22 @@ public class Events implements Listener {
 		if(i.getName().equals(ChatColor.GOLD+"AdminTools")) {
 			if(item.equals(generateItem(Material.STONE_AXE, ChatColor.DARK_RED+"Gamemode Survie"))) {
 				p.setGameMode(GameMode.SURVIVAL);
-				p.sendMessage(ChatColor.BLUE+"Gamemode réglé sur survie.");
+				p.sendMessage(ChatColor.BLUE+"Gamemode rÃ©glÃ© sur survie.");
 				p.closeInventory();
-			} else if(item.equals(generateItem(Material.GRASS, ChatColor.DARK_GREEN+"Gamemode Créatif"))){
+			} else if(item.equals(generateItem(Material.GRASS, ChatColor.DARK_GREEN+"Gamemode CrÃ©atif"))){
 				p.setGameMode(GameMode.CREATIVE);
-				p.sendMessage(ChatColor.BLUE+"Gamemode réglé sur créatif.");
+				p.sendMessage(ChatColor.BLUE+"Gamemode rÃ©glÃ© sur crÃ©atif.");
 				p.closeInventory();
 			} else if(item.equals(generateItem(Material.IRON_SWORD, ChatColor.GOLD+"Gamemode Aventure"))) {
 				p.setGameMode(GameMode.ADVENTURE);
-				p.sendMessage(ChatColor.BLUE+"Gamemode réglé sur aventure.");
+				p.sendMessage(ChatColor.BLUE+"Gamemode rÃ©glÃ© sur aventure.");
 				p.closeInventory();
 			} else if(item.equals(generateItem(Material.GLASS, ChatColor.GRAY+"Gamemode Spectateur"))) {
 				p.setGameMode(GameMode.SPECTATOR);
-				p.sendMessage(ChatColor.BLUE+"Gamemode réglé sur spéctateur.");
+				p.sendMessage(ChatColor.BLUE+"Gamemode rÃ©glÃ© sur spÃ©ctateur.");
 				p.closeInventory();
 			} else if(item.equals(adminToolsLogo("_goldocelot_"))){
-				p.sendMessage(ChatColor.GOLD+""+ChatColor.BOLD+"Merci d'utiliser le plugin \"AdminTools\" développé par Goldocelot et Glowstoner.");
+				p.sendMessage(ChatColor.GOLD+""+ChatColor.BOLD+"Merci d'utiliser le plugin \"AdminTools\" dÃ©veloppÃ© par Goldocelot et Glowstoner.");
 				p.closeInventory();
 			} else if (item.equals(generatePotItem(PotionType.INVISIBILITY, ChatColor.WHITE+"Activer/Desactiver le vanish"))) {
 				if(pVanish.contains(p)) {
@@ -141,7 +141,7 @@ public class Events implements Listener {
 						online.showPlayer(p);
 					}
 					
-					p.sendMessage(ChatColor.BLUE+"Vous n'êtes plus vanish.");
+					p.sendMessage(ChatColor.BLUE+"Vous n'Ãªtes plus vanish.");
 					
 					pVanish.remove(p);
 				} else if (!pVanish.contains(p)) {
@@ -149,26 +149,26 @@ public class Events implements Listener {
 						online.hidePlayer(p);
 					}
 					
-					p.sendMessage(ChatColor.BLUE+"Vous êtes vanish.");
+					p.sendMessage(ChatColor.BLUE+"Vous Ãªtes vanish.");
 					
 					pVanish.add(p);
 				}
 				p.closeInventory();
 			} else if (item.equals(generatePotItem(PotionType.INSTANT_HEAL, ChatColor.LIGHT_PURPLE+"Se heal"))) {
 				p.setHealth(p.getMaxHealth());
-				p.sendMessage(ChatColor.BLUE+"Vie réstaurée.");
+				p.sendMessage(ChatColor.BLUE+"Vie rÃ©staurÃ©e.");
 				p.closeInventory();
 			} else if (item.equals(generateItem(Material.COOKED_BEEF, ChatColor.GREEN+"Se feed"))) {
 				p.setFoodLevel(20);
-				p.sendMessage(ChatColor.BLUE+"Nourriture réstaurée.");
+				p.sendMessage(ChatColor.BLUE+"Nourriture rÃ©staurÃ©e.");
 				p.closeInventory();
 			} else if (item.equals(generatePotItem(PotionType.SPEED, ChatColor.BLUE+"Activer/Desactiver le fly speed"))) {
 				if (p.getFlySpeed() == 0.3f) {
 					p.setFlySpeed(0.1f);
-					p.sendMessage(ChatColor.BLUE+"Speed désactivé.");
+					p.sendMessage(ChatColor.BLUE+"Speed dÃ©sactivÃ©.");
 				} else if (p.getFlySpeed() == 0.1f) {
 					p.setFlySpeed(0.3f);
-					p.sendMessage(ChatColor.BLUE+"Speed activé.");
+					p.sendMessage(ChatColor.BLUE+"Speed activÃ©.");
 				}
 				p.closeInventory();
 			} else if (item.equals(generateItem(Material.PAPER, ChatColor.WHITE+"Ouvrir l'AdminList"))) {
@@ -190,7 +190,7 @@ public class Events implements Listener {
 			if(item.getType().equals(Material.SKULL_ITEM)) {
 				Player target = Bukkit.getPlayer(item.getItemMeta().getDisplayName().substring(2, item.getItemMeta().getDisplayName().length()));
 				if(target == null) {
-					p.sendMessage("§9Le joueur "+ChatColor.WHITE+item.getItemMeta().getDisplayName()+ "§9 s'est déconnecté !");
+					p.sendMessage("Â§9Le joueur "+ChatColor.WHITE+item.getItemMeta().getDisplayName()+ "Â§9 s'est dÃ©connectÃ© !");
 				}else {
 					if(playerMenu.containsKey(p)) {
 						playerMenu.remove(p, playerMenu.get(p));
@@ -203,7 +203,7 @@ public class Events implements Listener {
 					p.openInventory(inv);
 				}
 			} else if(item.equals(adminToolsLogo("Glowstoner"))){
-				p.sendMessage(ChatColor.GOLD+""+ChatColor.BOLD+"Merci d'utiliser le plugin \"AdminTools\" développé par Goldocelot et Glowstoner.");
+				p.sendMessage(ChatColor.GOLD+""+ChatColor.BOLD+"Merci d'utiliser le plugin \"AdminTools\" dÃ©veloppÃ© par Goldocelot et Glowstoner.");
 				p.closeInventory();
 			} else if (item.equals(generateItem(Material.PAPER, ChatColor.AQUA+"Suivant"))) {
 				p.closeInventory();
@@ -213,7 +213,7 @@ public class Events implements Listener {
 				
 				createInventory(p, currentPage.get(p)); 
 				
-			} else if (item.equals(generateItem(Material.PAPER, ChatColor.AQUA+"Précédent"))) {
+			} else if (item.equals(generateItem(Material.PAPER, ChatColor.AQUA+"PrÃ©cÃ©dent"))) {
 				p.closeInventory();
 				currentPage.replace(p, currentPage.get(p), currentPage.get(p) - 1);
 				
@@ -238,7 +238,7 @@ public class Events implements Listener {
 			Player target = Bukkit.getPlayer(targetName);
 			
 			if (item.equals(adminToolsLogo("_goldocelot_ and Glowstoner"))) {
-				p.sendMessage(ChatColor.GOLD+""+ChatColor.BOLD+"Merci d'utiliser le plugin \"AdminTools\" développé par Goldocelot et Glowstoner.");
+				p.sendMessage(ChatColor.GOLD+""+ChatColor.BOLD+"Merci d'utiliser le plugin \"AdminTools\" dÃ©veloppÃ© par Goldocelot et Glowstoner.");
 			} else if (item.equals(generateItem(Material.PAPER, ChatColor.AQUA+"Retour"))) {
 				p.closeInventory();				
 				initPlayers();
@@ -256,7 +256,7 @@ public class Events implements Listener {
 							ChatColor.BLUE+"\" .");
 				} else {
 					p.teleport(target.getLocation());
-					p.sendMessage(ChatColor.BLUE+"Vous avez bien été téléporté sur le joueur \""+ChatColor.WHITE+targetName+ChatColor.BLUE+"\" .");
+					p.sendMessage(ChatColor.BLUE+"Vous avez bien Ã©tÃ© tÃ©lÃ©portÃ© sur le joueur \""+ChatColor.WHITE+targetName+ChatColor.BLUE+"\" .");
 					p.closeInventory();
 				}
 			} else if (item.equals(generateItem(Material.PACKED_ICE, ChatColor.GRAY+"Freeze"))) {
@@ -265,9 +265,9 @@ public class Events implements Listener {
 							ChatColor.BLUE+"\" .");
 				} else {
 					if(freezes.contains(target)) {
-						p.sendMessage("§9Le joueur \"§f"+targetName+"§9 \" n'est plus freeze.");
+						p.sendMessage("Â§9Le joueur \"Â§f"+targetName+"Â§9 \" n'est plus freeze.");
 						
-						GlowstoneTitle gt = new GlowstoneTitle(target, "", "§cVous n'êtes plus freeze !", 20, 50, 20);
+						GlowstoneTitle gt = new GlowstoneTitle(target, "", "Â§cVous n'Ãªtes plus freeze !", 20, 50, 20);
 						gt.send();
 						
 						target.setWalkSpeed(0.2f);
@@ -275,9 +275,9 @@ public class Events implements Listener {
 						freezes.remove(target);
 						p.closeInventory();
 					} else {
-						p.sendMessage("§9Le joueur \"§f"+targetName+"§9 \" est freeze.");
+						p.sendMessage("Â§9Le joueur \"Â§f"+targetName+"Â§9 \" est freeze.");
 						
-						GlowstoneTitle gt = new GlowstoneTitle(target, "", "§9Vous êtes freeze !", 20, 50, 20);
+						GlowstoneTitle gt = new GlowstoneTitle(target, "", "Â§9Vous Ãªtes freeze !", 20, 50, 20);
 						gt.send();
 						
 						target.setWalkSpeed(0.0f);
@@ -290,7 +290,7 @@ public class Events implements Listener {
 					p.sendMessage(ChatColor.BLUE+"Impossible de localiser le joueur: \""+ChatColor.WHITE+targetName+
 							ChatColor.BLUE+"\" .");
 				} else {
-					p.sendMessage("§9Le joueur \"§f"+targetName+"§9 \" a été kill.");
+					p.sendMessage("Â§9Le joueur \"Â§f"+targetName+"Â§9 \" a Ã©tÃ© kill.");
 					
 					target.damage(target.getMaxHealth());
 					p.closeInventory();
@@ -300,7 +300,7 @@ public class Events implements Listener {
 					p.sendMessage(ChatColor.BLUE+"Impossible de localiser le joueur: \""+ChatColor.WHITE+targetName+
 							ChatColor.BLUE+"\" .");
 				} else {
-					p.sendMessage("§9Le joueur \"§f"+targetName+"§9 \" a été clear.");
+					p.sendMessage("Â§9Le joueur \"Â§f"+targetName+"Â§9 \" a Ã©tÃ© clear.");
 					
 					target.getInventory().clear();
 					target.getInventory().setHelmet(null);
@@ -324,7 +324,7 @@ public class Events implements Listener {
 					p.sendMessage(ChatColor.BLUE+"Impossible de localiser le joueur: \""+ChatColor.WHITE+targetName+
 							ChatColor.BLUE+"\" .");
 				} else {
-					p.sendMessage("§9Le joueur \"§f"+targetName+"§9 \" a été kick.");
+					p.sendMessage("Â§9Le joueur \"Â§f"+targetName+"Â§9 \" a Ã©tÃ© kick.");
 					p.closeInventory();
 				// Kick le target.
 				}
@@ -343,7 +343,7 @@ public class Events implements Listener {
 							ChatColor.BLUE+"\" .");
 				} else {
 					p.closeInventory();
-					p.sendMessage("§9Ender Chest de \"§f"+targetName+"§9 \" ouvert.");
+					p.sendMessage("Â§9Ender Chest de \"Â§f"+targetName+"Â§9 \" ouvert.");
 					
 					p.openInventory(createEnderChest(target));					
 				}
@@ -353,7 +353,7 @@ public class Events implements Listener {
 							ChatColor.BLUE+"\" .");
 				} else {
 					p.closeInventory();
-					p.sendMessage("§9Inventaire de \"§f"+targetName+"§9 \" ouvert.");
+					p.sendMessage("Â§9Inventaire de \"Â§f"+targetName+"Â§9 \" ouvert.");
 					
 					p.openInventory(createPlayerInventory(target));					
 				}
@@ -362,7 +362,7 @@ public class Events implements Listener {
 					p.sendMessage(ChatColor.BLUE+"Impossible de localiser le joueur: \""+ChatColor.WHITE+targetName+
 							ChatColor.BLUE+"\" .");
 				} else {
-					p.sendMessage(ChatColor.BLUE+"Vie de "+ChatColor.WHITE+targetName+ChatColor.BLUE+" réstaurée.");
+					p.sendMessage(ChatColor.BLUE+"Vie de "+ChatColor.WHITE+targetName+ChatColor.BLUE+" rÃ©staurÃ©e.");
 					
 					target.setHealth(target.getMaxHealth());
 					p.closeInventory();
@@ -372,13 +372,13 @@ public class Events implements Listener {
 					p.sendMessage(ChatColor.BLUE+"Impossible de localiser le joueur: \""+ChatColor.WHITE+targetName+
 							ChatColor.BLUE+"\" .");
 				} else {
-					p.sendMessage(ChatColor.BLUE+"Nourriture de "+ChatColor.WHITE+targetName+ChatColor.BLUE+" réstaurée.");
+					p.sendMessage(ChatColor.BLUE+"Nourriture de "+ChatColor.WHITE+targetName+ChatColor.BLUE+" rÃ©staurÃ©e.");
 					
 					target.setFoodLevel(20);
 					p.closeInventory();
 				}
-			} else if (item.equals(generateItem(Material.IRON_CHESTPLATE, ChatColor.GRAY+"Demander une vérif"))) {
-				p.sendMessage(ChatColor.BLUE+"Les vérifs sont pour le moment interdite.");
+			} else if (item.equals(generateItem(Material.IRON_CHESTPLATE, ChatColor.GRAY+"Demander une vÃ©rif"))) {
+				p.sendMessage(ChatColor.BLUE+"Les vÃ©rifs sont pour le moment interdite.");
 				p.closeInventory();
 			}
 			e.setCancelled(true);
@@ -390,7 +390,7 @@ public class Events implements Listener {
 			String targetName = playerMenu.get(p);
 			Player target = Bukkit.getPlayer(targetName);
 			if (item.equals(adminToolsLogo("_goldocelot_ and Glowstoner"))) {
-				p.sendMessage(ChatColor.GOLD+""+ChatColor.BOLD+"Merci d'utiliser le plugin \"AdminTools\" développé par Goldocelot et Glowstoner.");
+				p.sendMessage(ChatColor.GOLD+""+ChatColor.BOLD+"Merci d'utiliser le plugin \"AdminTools\" dÃ©veloppÃ© par Goldocelot et Glowstoner.");
 			} else if (item.equals(generateItem(Material.PAPER, ChatColor.AQUA+"Retour"))) {
 				p.closeInventory();
 				Inventory inv = Bukkit.createInventory(null, 54, ChatColor.GREEN+"PlayerMenu");
@@ -505,7 +505,7 @@ public class Events implements Listener {
 	
 	public static ItemStack adminToolsLogo(String crea) {
 		ArrayList<String> lore = new ArrayList<String>();
-		lore.add("§8");
+		lore.add("Â§8");
 		lore.add(ChatColor.GOLD+""+ChatColor.ITALIC+"By "+crea);
 		
 		ItemStack logo = new ItemStack(Material.GOLD_SWORD, 1);
@@ -522,7 +522,7 @@ public class Events implements Listener {
 	    ItemStack skull = new ItemStack(Material.SKULL_ITEM, 1, (short)3);
 	    SkullMeta skullMeta = (SkullMeta)skull.getItemMeta();
 	    skullMeta.setOwner(owner);
-	    skullMeta.setDisplayName("§d" + owner);
+	    skullMeta.setDisplayName("Â§d" + owner);
 	    skull.setItemMeta(skullMeta);
 	    
 	    return skull;
@@ -562,7 +562,7 @@ public class Events implements Listener {
 			
 			p.openInventory(inv);
 		}else if(page == pa) {
-			inv.setItem(45, generateItem(Material.PAPER, ChatColor.AQUA+"Précédent"));
+			inv.setItem(45, generateItem(Material.PAPER, ChatColor.AQUA+"PrÃ©cÃ©dent"));
 			inv.setItem(46, generateItem(Material.HOPPER, ChatColor.DARK_GREEN+"Rechercher"));
 			inv.setItem(49, adminToolsLogo("Glowstoner"));
 			p.openInventory(inv);
@@ -570,7 +570,7 @@ public class Events implements Listener {
 			inv.setItem(53, generateItem(Material.PAPER, ChatColor.AQUA+"Suivant"));
 			inv.setItem(46, generateItem(Material.HOPPER, ChatColor.DARK_GREEN+"Rechercher"));
 			inv.setItem(49, adminToolsLogo("Glowstoner"));
-			inv.setItem(45, generateItem(Material.PAPER, ChatColor.AQUA+"Précédent"));
+			inv.setItem(45, generateItem(Material.PAPER, ChatColor.AQUA+"PrÃ©cÃ©dent"));
 			
 			p.openInventory(inv);
 		}
@@ -624,7 +624,7 @@ public class Events implements Listener {
 		inv.setItem(35, generateItem(Material.CHEST, ChatColor.GOLD+"Inventaire"));
 		inv.setItem(46, generatePotItem(PotionType.INSTANT_HEAL, ChatColor.LIGHT_PURPLE+"Heal"));
 		inv.setItem(48, generateItem(Material.COOKED_BEEF, ChatColor.GREEN+"Feed"));
-		inv.setItem(50, generateItem(Material.IRON_CHESTPLATE, ChatColor.GRAY+"Demander une vérif"));	
+		inv.setItem(50, generateItem(Material.IRON_CHESTPLATE, ChatColor.GRAY+"Demander une vÃ©rif"));	
 		inv.setItem(52, generateItem(Material.GRASS, ChatColor.GREEN+"Monde: "+p.getWorld().getName()));
 		return inv;
 	}	
